@@ -1,4 +1,7 @@
-artists/index.html.erb
+<h1>All Artists</h1>
 
+<%= @artists.each do |artist| %>
+  <h3><%= artist.name %></h3>
+<% end %>
 
-<button type="button" name="New Artist">New Artist</button>
+<%= link_to "New Artists", new_artist_path %>
