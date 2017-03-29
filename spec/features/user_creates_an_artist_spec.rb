@@ -28,11 +28,8 @@ RSpec.feature "User creates an artist" do
       fill_in "artist_name", with: artist_name
       fill_in "artist_image_path", with: artist_image_path
       click_on "Create Artist"
-      save_and_open_page
 
       expect(page).to have_content("Name cannot be blank")
     end
-
   end
-
 end
