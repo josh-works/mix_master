@@ -1,34 +1,16 @@
 require 'rails_helper'
 
 RSpec.feature "User can view all artists" do
-  scenario "they can see all artists on index" do
+  scenario "they can see all artists names on index" do
+    artists = %w(Bob Adelle Beyonce).map do |artist_name|
+      Artist.create(name: artist_name, image_path: "http://cps-static.rovicorp.com/3/JPG_400/MI0003/146/MI0003146038.jpg")
+    end
 
-
-
-
-    # As a user
-    # Given that artists exist in the database
-    # When I visit the artists index
-    # Then I should see each artist's name
-    # And each name should link to that artist's individual page
+    visit artists_path
+    
+    artists.each do |artist|
+      expect(page).to have_content artist.name
+      expect(page).to have_link artist.name, href: artist_path(artist)
+    end
   end
-
-  end
-
-# life raft from
-# https://github.com/rwarbelow/mix_master/blob/2_implement-artists/spec/features/user_views_all_artists_spec.rb
-# require 'rails_helper'
-#
-# RSpec.feature "User views all artists" do
-#   scenario "they see the names of each artist" do
-#     artists = %w(Bob Adele Beyonce).map do |artist_name|
-#       Artist.create(name: artist_name, image_path: "http://cps-static.rovicorp.com/3/JPG_400/MI0003/146/MI0003146038.jpg")
-#     end
-#
-#     visit artists_path
-#
-#     artists.each do |artist|
-#       expect(page).to have_link artist.name, href: artist_path(artist)
-#     end
-#   end
-# end
+end
