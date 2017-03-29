@@ -18,6 +18,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
+  gem 'shoulda-matchers' # github: 'thoughtbot/shoulda-matchers' may be required
 end
 
 group :development do

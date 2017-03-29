@@ -10,7 +10,11 @@ class ArtistsController < ApplicationController
 
   def create
     @artist = Artist.find_or_create_by(artist_params)
-    redirect_to artists_path
+    redirect_to artist_path(@artist)
+  end
+
+  def show
+    @artist = Artist.find(params[:id])
   end
 
   private
