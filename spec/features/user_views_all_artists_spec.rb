@@ -7,7 +7,7 @@ RSpec.feature "User can view all artists" do
     end
 
     visit artists_path
-    
+
     artists.each do |artist|
       expect(page).to have_content artist.name
       expect(page).to have_link artist.name, href: artist_path(artist)

@@ -1,2 +1,10 @@
 <h1><%= @artist.name %></h1>
 <img src="<%= @artist.image_path %>" alt="artist_image_path">
+
+<!-- figure out how to overwrite post method -->
+<div>
+  <%= link_to "Edit Artist", edit_artist_path %>
+</div>
+<div>
+  <%= link_to "Delete Artist", artist_path(@artist), method: :delete %>
+</div>
