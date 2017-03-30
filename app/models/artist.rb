@@ -4,4 +4,6 @@ class Artist < ActiveRecord::Base
   validates_uniqueness_of :name
   validates :image_path, presence: true
 
+  has_many :songs
+
 end

@@ -19,7 +19,8 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'shoulda-matchers' # github: 'thoughtbot/shoulda-matchers' may be required
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
 end
 
 group :development do
