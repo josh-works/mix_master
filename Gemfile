@@ -19,6 +19,7 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'shoulda-matchers' # github: 'thoughtbot/shoulda-matchers' may be required
+  gem 'factory_girl'
 end
 
 group :development do
