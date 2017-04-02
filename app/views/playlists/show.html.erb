@@ -1,0 +1,9 @@
+<h3>All songs in <%= @playlist.name %> </h3>
+
+<ul class="song_list">
+<% @playlist.songs.each do |song| %>
+  <li>
+    <%= link_to song.title, song_path(song) %>
+  </li>
+  <% end %>
+</ul>

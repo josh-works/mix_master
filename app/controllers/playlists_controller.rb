@@ -1,5 +1,6 @@
 class PlaylistsController < ApplicationController
   def index
+    @playlists = Playlist.all
   end
 
   def new
@@ -8,9 +9,15 @@ class PlaylistsController < ApplicationController
   end
 
   def create
-    @playlist = Playlist.find_or_create_by(playlist_params)
+    @playlist = Playlist.create(playlist_params)
     redirect_to playlist_path(@playlist)
   end
+
+  def show
+    @playlist = Playlist.find(params[:id])
+  end
+
+
 
   private
 

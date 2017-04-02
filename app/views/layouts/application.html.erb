@@ -10,5 +10,20 @@
 
 <%= yield %>
 
+  <footer>
+    <div class="new">
+      <ul>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "New Artist", new_artist_path %></li>
+        <li><%= link_to "New Playlist", new_playlist_path %></li>
+      </ul>
+    </div>
+    <div class="all">
+      <ul>
+        <li><%= link_to "All Artists", artists_path %></li>
+        <li><%= link_to "All Playlists", playlists_path %></li>
+      </ul>
+    </div>
+  </footer>
 </body>
 </html>
