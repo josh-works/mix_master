@@ -1,0 +1,8 @@
+<%= @playlist.name %>
+<% @songs.each do |song| %>
+<%= song.name %>
+<% end %>
+
+<div>
+  <%= link_to "<< all playlists", playlists_path %>
+</div>
